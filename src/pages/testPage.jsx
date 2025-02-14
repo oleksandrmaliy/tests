@@ -1,9 +1,9 @@
-import Test from '../components/test.jsx';
+import Navbar from '../components/test.jsx';
 
 const TestPage = () => {
 	return (
 		<>
-			<Test />
+			<Navbar />
 		</>
 	);
 };
