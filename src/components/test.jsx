@@ -1,56 +1,57 @@
-// const Test = () => {
-// 	const a = null;
-// 	const b = undefined;
-// 	const result = a == b;
+const Test = () => {
+	console.log('1 number');
+	let a = 10;
+	let b = -5;
+	let c = 3.14;
+	let d = Infinity;
+	let e = NaN;
+	console.log(a, b, c, d, e);
 
-// 	return (
-// 		<>
-// 			<pre>Результат: {String(result)}</pre>
-// 		</>
-// 	);
-// };
+	console.log('2 bigint');
+	let bigNum = 9007199254740992n;
+	let anotherBigNum = BigInt('123456789012345678901234567890');
+	console.log(bigNum, anotherBigNum);
 
-// export default Test;
+	console.log('3 string');
+	let str1 = 'Hello, world!';
+	let str2 = 'Привіт!';
+	let str3 = `Число: ${10 + 5}`;
+	console.log(str1, str2, str3);
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Іконки з lucide-react
+	console.log('4 boolean');
+	let isOnline = true;
+	let hasPermission = false;
+	console.log(isOnline, hasPermission);
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+	console.log('5 symbol');
+	let id1 = Symbol('userID');
+	let id2 = Symbol('userID');
+	console.log(id1 === id2); // false (унікальні символи)
+	console.log(id1 == id2); // false (унікальні символи)
+	console.log(id1, id2);
+	let sym = Symbol('description');
+	console.log(sym);
 
-  return (
-    <nav className="bg-blue-600 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-white text-xl font-bold">Мій сайт</h1>
+	console.log('6 null');
+	let emptyValue = null;
+	console.log(emptyValue);
 
-        {/* Кнопка для відкриття/закриття меню */}
-        <button
-          className="text-white md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={30} /> : <Menu size={30} />}
-        </button>
+	console.log('7 undefined');
+	let notAssigned;
+	console.log(notAssigned); // undefined
+	function test() {}
+	console.log(test()); // undefined
 
-        {/* Навігаційне меню */}
-        <ul
-          className={`absolute left-0 top-16 w-full bg-blue-700 text-white text-center transition-transform ${
-            isOpen ? "translate-y-0" : "-translate-y-full"
-          } md:relative md:flex md:translate-y-0 md:space-x-6 md:bg-transparent md:w-auto`}
-        >
-          <li className="p-3 md:p-0">
-            <Link to="/" onClick={() => setIsOpen(false)}>Головна</Link>
-          </li>
-          <li className="p-3 md:p-0">
-            <Link to="/about" onClick={() => setIsOpen(false)}>Про нас</Link>
-          </li>
-          <li className="p-3 md:p-0">
-            <Link to="/contact" onClick={() => setIsOpen(false)}>Контакти</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
+	console.log('8 obhect');
+	let user = { name: 'Alice', age: 25, email: 'alice@example.com' };
+	console.log(user);
+	console.log(user.name, user.age, user.email);
+
+	return (
+		<>
+			<pre>Результат</pre>
+		</>
+	);
 };
 
-export default Navbar;
+export default Test;
