@@ -47,6 +47,38 @@ const Test = () => {
 	console.log(user);
 	console.log(user.name, user.age, user.email);
 
+	console.log('Array length');
+	const arr = [1, 2, 3, 4, 5];
+
+	console.log(arr);
+	console.log(arr.length);
+
+	// const text = 'Це дуже довгий текст, який потрібно обрізати.';
+	// const maxLength = 18;
+
+	const shortenText = (text, maxLength) => {
+		if (text.length <= maxLength) return text;
+
+		let trimmedText = text.slice(0, maxLength);
+
+		// Знайти останній пробіл у межах обрізаного тексту
+		let lastSpaceIndex = trimmedText.lastIndexOf(' ');
+
+		// Якщо пробіл знайдено, обрізаємо до нього, інакше залишаємо як є
+		if (lastSpaceIndex > 0) {
+			trimmedText = trimmedText.slice(0, lastSpaceIndex);
+		}
+
+		return trimmedText + '...';
+	};
+
+	// Перевіряємо
+	console.log(
+		shortenText('Це дуже довгий текст, який потрібно обрізати.', 20)
+	);
+	// "Це дуже довгий..."
+	console.log(shortenText('СловоБезПробілів', 10));
+	// "СловоБезПр..."
 	return (
 		<>
 			<pre>Результат</pre>
