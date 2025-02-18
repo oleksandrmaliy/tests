@@ -69,7 +69,7 @@ const Test = () => {
 			trimmedText = trimmedText.slice(0, lastSpaceIndex);
 		}
 
-		return trimmedText + '...';
+		return trimmedText + ' ...';
 	};
 
 	// Перевіряємо
@@ -82,6 +82,13 @@ const Test = () => {
 	return (
 		<>
 			<pre>Результат</pre>
+			<p>{arr.length}</p>
+			<p>
+				{shortenText(
+					'Це дуже довгий текст, який потрібно обрізати.',
+					20
+				)}
+			</p>
 		</>
 	);
 };
