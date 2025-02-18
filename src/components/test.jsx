@@ -89,6 +89,15 @@ const Test = () => {
 					20
 				)}
 			</p>
+			<video
+				controls
+				width='200'>
+				<source
+					src='../../src/assets/video1.MOV'
+					type='video/mp4'
+				/>
+				Ваш браузер не підтримує тег відео.
+			</video>
 		</>
 	);
 };
